@@ -57,14 +57,10 @@ class drawingPanel extends JPanel {
 	 fillOval fO = new fillOval();
 	 Eraser eR = new Eraser();
 	fillBucket fB = new fillBucket();
-rbrush rb = new rbrush();
-pencil pn = new pencil();
+	rbrush rb = new rbrush();
+	pencil pn = new pencil();
 	
-	 
 	 BufferedImage open_Image;
-	 
-	
-	 
 	
 	 BufferedImage off_Image = new BufferedImage(1200,800, BufferedImage.TYPE_INT_ARGB);
 	
@@ -74,12 +70,12 @@ pencil pn = new pencil();
 		
 		
 	
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        	setBorder(BorderFactory.createLineBorder(Color.black));
         
-        addMouseListener(new MouseAdapter() {
-            public void mousePressed(MouseEvent e) {
+        	addMouseListener(new MouseAdapter() {
+        	
+        	 public void mousePressed(MouseEvent e) {
             	if(flag==1){
-            	
             		rb.count++;
             	
             		rb.prevx=e.getX();
@@ -104,43 +100,32 @@ pencil pn = new pencil();
             	}
             if(flag==8){
             	first= new Point(e.getX(),e.getY());
-            	
             	}
-          
             if(flag==11){ 
             	
             	repaint();
             }
             if(flag==12){
-  	dA.ranchor = new Point(e.getX(),e.getY());
-  	}
+  		dA.ranchor = new Point(e.getX(),e.getY());
+  		}
             if(flag==13){
               	fO.ranchor = new Point(e.getX(),e.getY());
               	}
-            if(flag==14){
-        	
-        	
+            if(flag==14){	
         		 eR.prevx=e.getX();
         		 eR.prevy=e.getY();
         	}
             if(flag==20){
-            	
             		pn.count++;
-            	
+
             		pn.prevx=e.getX();
            		pn.prevy=e.getY();
             	
             	}
-            	
-            
 
-
-           
             }
             
-       
-
-        	public void mouseReleased(MouseEvent e) {
+     	public void mouseReleased(MouseEvent e) {
         		if(flag==1){
         	       
         		}
@@ -161,24 +146,16 @@ pencil pn = new pencil();
         		 if(flag==8){
                  	second= new Point(e.getX(),e.getY());
                  	repaint();
-                 	 }
+                 	}
         		 if(flag==9){
-        			
-        				dS1.ranchor = new Point(e.getX(),e.getY());
-                		
-        		    
+        			dS1.ranchor = new Point(e.getX(),e.getY());
         		        setFlag(0);
-        		               	repaint();
-        			 
-        			 
+        		         repaint();
         		 }
         		 if(flag==12){        			
               		dA.addRect((e.getX())-(dA.ranchor.x),(e.getY())-(dA.ranchor.y));}
         		 if(flag==13){
              		fO.addRect((e.getX())-(fO.ranchor.x),(e.getY())-(fO.ranchor.y));}
-        		 
-        		 
-        	    
         	}
         	
         	}   );
@@ -186,12 +163,8 @@ pencil pn = new pencil();
             public void mouseDragged(MouseEvent e) {
             	 
             	if(flag==1){
-            		 
-            		 rb.cux=e.getX();
+			rb.cux=e.getX();
              		rb.cuy=e.getY();
-            		
-             
-            		
             	repaint();
             	
           		 }
@@ -224,20 +197,14 @@ pencil pn = new pencil();
             	if(flag==14){
            		 eR.cux=e.getX();
            		eR.cuy=e.getY();   
-           	  
-           		
-           	repaint();
-           	
-         		 }
+	   		repaint();
+       		 }
             	if(flag==20){
-           	
-           		 pn.cux=e.getX();
+     			pn.cux=e.getX();
             		pn.cuy=e.getY();
-      
-           		
-           	repaint();
+           		repaint();
            	
-         		 }
+         	}
                 
             }
         });
@@ -303,36 +270,11 @@ pencil pn = new pencil();
 			eR.pen_array[i].y=0;
 	   }
 
-	   
-	 /*  for (int i=0; i<dS1.rcurrline;i++){
-			//fO.rstarts[i].x=0; fO.rstarts[i].y=0; fO.rends[i].x=0; fO.rends[i].y=0;
-			dS1.rstarts[i].x=0; 
-			dS1.rstarts[i].y=0; 
-			dS1.saveString[i]=null;
-			dS1.fontStyle[i]=null;
-			dS1.fontSize[i]=0;
-	 
-	   
-	   }*/
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
 	   repaint();
-	   
-	   
-	   
-	   
+
    }
 	
-   
-
-    
+ 
  public void paintComponent(Graphics g) {
 	
 	super.paintComponent(g);   
@@ -344,15 +286,12 @@ pencil pn = new pencil();
 	
 	 Graphics2D gc;
 	 Graphics2D g21 = (Graphics2D)g; 
-	
-	
- 
 
 	  gc = off_Image.createGraphics();
 
 
   if((flag==8 || done==1)&& (((flag!=20)&&(oflag==0))&&(flag!=1))){ 	
-Gradient_Paint(gc);
+	Gradient_Paint(gc);
       }
    else 
     	if((flag!=20)&&(flag!=1)){
@@ -361,7 +300,7 @@ Gradient_Paint(gc);
     			}
     		else{    				
     			  		
-    			gc.setColor(bcolor);
+    		  gc.setColor(bcolor);
     		  gc.fillRect(0, 0, 1200,800);
     		  }
     }
@@ -385,7 +324,7 @@ Gradient_Paint(gc);
      eR.paintLine(gc,flag);
      
     
-    	}
+    }
 
     
 
@@ -407,20 +346,11 @@ Gradient_Paint(gc);
    if(zflag==3){
 	   transformer3.scale(4,4);
 	   g21.setTransform(transformer3);}
-	   
-   
-	   
 
- 
    g21.drawImage(off_Image, 0,0,null);
    }
 }
  
-	
-    
-
-    
-    
 
 public void setFlag(int x){
 	this.flag=x;
@@ -499,19 +429,14 @@ public void openimage(){
 	 repaint();
 }
 
-
-
-
 public void Gradient_Paint(Graphics2D gc){
-
-
 
 	GradientPaint gel = new GradientPaint(50,50, Color.WHITE,1200,1200, gcolor,true);
   	gc.setPaint(gel);	
-		gc.fillRect(0, 0, 1200,800);
-		done=1;
+	gc.fillRect(0, 0, 1200,800);
+	done=1;
 		
-		}
+	}
 
 
 
