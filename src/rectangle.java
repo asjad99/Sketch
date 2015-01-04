@@ -13,14 +13,6 @@ public class rectangle extends Shape1{
 	int stroke_array[] = new int[rMAXLINES];
 	public void paintRect( Graphics2D gc,Color color,int stroke){
 		
-		//    Graphics2D g2d = (Graphics2D) g;
-		
-		
-		//gc.setColor(Color.blue);
-	//	gc.drawLine(10, 10, 50, 50);
-		 //if(flag==6){
-			
-			
 			for (int i=0; i<rcurrline;i++){
 				
 				if(color_array[i]!=null){
@@ -80,16 +72,12 @@ public class rectangle extends Shape1{
 		color_array[rcurrline] = gc.getColor();
 		}
 
-	 
 	
 	}
 
 	public Rectangle2D getShape(){ 
-  		 
    		return shape;
-		
-    		 
-    		 
+   		 
     	 }
 }
 
