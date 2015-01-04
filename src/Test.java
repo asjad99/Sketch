@@ -34,10 +34,6 @@ public class Test extends JFrame implements ActionListener,ItemListener {
 	private Color color = Color.black;
 	 
 
-	
-
-
-//ImageIcon buttonIcon0 = new ImageIcon("C:\\icons\\resize\\pen.png");
 ImageIcon buttonIcon1 = new ImageIcon("C:\\icons\\resize\\pencil.png");
 ImageIcon buttonIcon2 = new ImageIcon("C:\\icons\\resize\\brush1.png");
 ImageIcon buttonIcon3 = new ImageIcon("C:\\icons\\reszie\\fcircle.png");
@@ -77,10 +73,6 @@ private JButton filled_rectangle = new JButton(buttonIcon6);
 private JButton  line = new JButton(buttonIcon15);
 private JButton zoom = new JButton(buttonIcon9);
 private JButton gradient = new JButton( buttonIcon8);
-//private JButton stokeButton1 = new JButton("Stoke");
-//private JButton stokeButton2  = new JButton("Stoke2");
-//private JButton stokeButton3 = new JButton("Stoke3");
-//private JButton stokeButton4 = new JButton("Stoke4");
 private JButton Brush = new JButton(buttonIcon1);
 private JButton oval = new JButton(buttonIcon4);
 private JButton fillBucket = new JButton(buttonIcon11);
@@ -150,12 +142,6 @@ private JPanel upperpanel = new JPanel();
 
 Color array[] = new Color[20];
 
-
-
-
-
-//JScrollPane pane = new JScrollPane(imagepanel);
-
 Icon tigerIcon = new ImageIcon("SmallTiger.gif");
 JButton myButton = new JButton("Tiger", tigerIcon);
 
@@ -172,16 +158,13 @@ public Test(final drawingPanel drp){
 this.drp=drp;
 	
 
-try {
+	try {
 	    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-	  } catch (Exception e) {
+	 } 
+	 catch (Exception e) {
 	    e.printStackTrace();
 	  }
 	Toolkit.getDefaultToolkit().setDynamicLayout(true);
-	
-	
-	
-	//line.setPreferredSize(new Dimension(5,0));
 
 JFrame f = new JFrame();
 f.setTitle("AHA Editor");
@@ -190,10 +173,6 @@ f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 f.setVisible(true);
 f.add(drawpanel);
 
-
-//oval.setBorder(BorderFactory.createLineBorder(Color.black,3));
-//line.setBorder(BorderFactory.createRaisedBevelBorder());
-//line.setBounds(new Rectangle(50,50));
 drawpanel2.add(line);
 drawpanel2.add(rectangle);
 drawpanel2.add(filled_rectangle);
@@ -204,10 +183,6 @@ drawpanel2.add(zoom);
 drawpanel.add(gradient);
 drawpanel.add(text);
 drawpanel.add(Brush);
-//drawpanel.add(stokeButton1);
-//drawpanel.add(stokeButton2);
-//drawpanel.add(stokeButton3);
-//drawpanel.add(stokeButton4);
 drawpanel.add(fillBucket);
 drawpanel.add(DrawArc);
 drawpanel.add(FillOval);
@@ -220,20 +195,12 @@ drawpanel3.add(b4);
 
 
 colorpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-//colorpanel.setBounds(20, 20, 20, 20);
 colorpanel2.setLayout(new FlowLayout(FlowLayout.LEFT));
 colorpanel3.setLayout(new BorderLayout());
-//colorpanel3.setLayout(new FlowLayout(FlowLayout.LEFT));
 
 minor_colorpanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-//colorpanel.setPreferredSize(new Dimension(10, 32));
-//drawpanel.setBounds(5, 5, 5, 5);
-
-
 font_panel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 upperpanel.setLayout(new BorderLayout());
-
-
 
 redButton.setBackground(Color.red);
 blueButton.setBackground(Color.blue);
@@ -293,16 +260,6 @@ font_panel.add(tb1);
 font_panel.add(jlist);
 font_panel.add(jlist1);
 
-//White.setBorder(BorderFactory.createLineBorder(Color.black,1));
-//White.setBorder(BorderFactory.createRaisedBevelBorder());
-
-//White.setBounds(20, 20, 50, 50);
-//redButton.setBounds(100, 100, 100, 100);
-
-//major_colorpanel.add(colorpanel,BorderLayout.CENTER);
-//major_colorpanel.add(colorpanel2,BorderLayout.PAGE_END);
-//major_colorpanel.add(colorpanel,new FlowLayout(FlowLayout.LEFT));
-//major_colorpanel.add(colorpanel2,new FlowLayout(FlowLayout.LEFT));
 major_colorpanel.setLayout(new BorderLayout());
 minor_colorpanel.setLayout(new BorderLayout());
 minor_colorpanel.add(colorpanel,BorderLayout.NORTH);
@@ -310,10 +267,7 @@ minor_colorpanel.add(colorpanel2,BorderLayout.SOUTH);
 major_colorpanel.add(colorpanel3,BorderLayout.WEST);
 major_colorpanel.add(minor_colorpanel,BorderLayout.CENTER);
 
-//paint_toolbar.add(major_colorpanel,BoxLayout.X_AXIS);
 
-
-//drawpanel.setPreferredSize(new Dimension(120, 10));
 drawpanel.setLayout(new BoxLayout(drawpanel, BoxLayout.PAGE_AXIS));
 drawpanel2.setLayout(new BoxLayout(drawpanel2, BoxLayout.PAGE_AXIS));
 drawpanel3.setLayout(new BoxLayout(drawpanel3, BoxLayout.PAGE_AXIS));
@@ -670,16 +624,15 @@ public void itemStateChanged(ItemEvent e) {
     if (styleSelection == 1) {
     	//System.out.println("who am i");
     	drp.setFontStyle("Arial");
-    	
-         }
+    }
     if (styleSelection == 2) 
-         {
+    {
     	drp.setFontStyle("Impact");
     }
     if (styleSelection == 2) 
     {
 	drp.setFontStyle("ALGERIAN");
-}
+     }
     
     if(sizeSelection == 0)
     {
@@ -728,15 +681,11 @@ public void itemStateChanged(ItemEvent e) {
 
 public void actionPerformed(ActionEvent e) {
 	  if (e.getSource() == pen){
-		
 		  drp.setFlag(1);
-		//  drp.pencount++;
-		 // Color color = JColorChooser.showDialog(this, "Select Custom Color",cc);
-		  }
+           }
 	  
 	  if (e.getSource() == rectangle){
 		  drp.setFlag(2);		 
-		  
 	  }
 	 
 	  if (e.getSource() == filled_rectangle){
@@ -749,22 +698,6 @@ public void actionPerformed(ActionEvent e) {
 		  drp.setFlag(5);  }
 	  
 	  if (e.getSource() == zoom){
-		  //drp.setFlag(6);
-		//drp.saveimage();
-
-		//  drp.openimage();
-		//  drp.oflag=1;
-		 // drp.setFlag(66);
-		 // drp.zflag=1;
-		 // dim.height=1600;
-		//  dim.width=2400;
-		//  drp.revalidate();
-		//  drp.repaint();
-		  
-		  // System.exit(0);
-		 // chooser.showSaveDialog(frame);
-		  
-		  /// File file = chooser.getSelectedFile();
 		}
 	  if (e.getSource() == line){
 		  drp.setFlag(7);
@@ -801,10 +734,8 @@ public void actionPerformed(ActionEvent e) {
 			drp.setFlag(20);
 				  }
 if(e.getSource() ==fillBucket){ 
-		  
-		  drp.setFlag(11);
-		  
-	  }
+	drp.setFlag(11);
+		  }
 if(e.getSource() ==DrawArc){ 
 	  
 	  drp.setFlag(12);
@@ -870,13 +801,9 @@ if ("disable".equals(e.getActionCommand())) {
     b5.setEnabled(false);
 }
 
-
-	  
-	  
-	  if(e.getSource()==("Exit"))
+if(e.getSource()==("Exit"))
 	{	   
-	System.exit(0);
-	//System.out.println("hi");	
+	System.exit(0);	
 	}
 	  if(e.getSource()== text){ 
 		  input = JOptionPane.showInputDialog("Enter Input:");
